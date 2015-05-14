@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - @localhost" uuid="5b9dd466-3d44-4d2e-b730-ba0cd300f185">
+    <database-info product="MySQL" version="5.6.20" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
+    <schema name="" catalog="oophp"/>
+    <table name="cars" schema="" catalog="oophp" type="TABLE">
+      <column name="car_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="make_id" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="yearmade" sqlType="YEAR" precision="0" scale="0" nullable="false" jdbcType="91"/>
+      <column name="mileage" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4"/>
+      <column name="price" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
+      <column name="description" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="car_id"/>
+      <foreign-key name="cars_ibfk_1" columns="make_id" ref-table="makes" ref-schema="" ref-catalog="oophp" ref-columns="make_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="yearmade" unique="false" columns="yearmade"/>
+    </table>
+    <table name="makes" schema="" catalog="oophp" type="TABLE">
+      <column name="make_id" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" autoIncrement="true"/>
+      <column name="make" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="make_id"/>
+      <exported-key name="cars_ibfk_1" table="cars" schema="" catalog="oophp" columns="make_id"/>
+    </table>
+    <table name="names" schema="" catalog="oophp" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="meaning" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="gender" sqlType="ENUM" precision="6" scale="0" nullable="false" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="savings" schema="" catalog="oophp" type="TABLE">
+      <column name="id" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="15" scale="0" nullable="false" jdbcType="12"/>
+      <column name="balance" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+  </data-source>
+</component>

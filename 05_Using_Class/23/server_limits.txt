@@ -1,0 +1,5 @@
+﻿<ul>
+    <li>Up to <?php echo $_SESSION['maxfiles'];?> files can be uploaded simultaneously.</li>
+    <li>Each file should be no more than <?php echo UploadFile::convertFromBytes($max);?>.</li>
+    <li>Combined total should not exceed <?php echo $_SESSION ['displaymax'];?>.</li>
+</ul>
